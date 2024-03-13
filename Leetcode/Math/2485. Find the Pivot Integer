@@ -1,0 +1,22 @@
+class Solution(object):
+    def pivotInteger(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        last1,last2=1,n
+        sum1,sum2=last1,last2
+        
+        while last1<=n:
+            if sum1==sum2 and last1==last2:
+                return last1
+            if sum1>sum2:
+                last2-=1
+                sum2+=last2
+            else:
+                last1+=1
+                sum1+=last1
+        return -1
+            
+        
+        
